@@ -118,7 +118,9 @@ class EventTarget {
 }
 
 class EventListener {
-    void handleEvent(Event event);
+    void handleEvent(Event event) {
+        assert(0);
+    }
 }
 
 interface NonElementParentNode {
@@ -718,9 +720,6 @@ class TreeWalker {
     Node nextNode() {
         assert(0);
     }
-    Node previousNode() {
-        assert(0);
-    }
 
     void detach() {
         assert(0);
@@ -730,24 +729,24 @@ class TreeWalker {
 // ToDo
 struct NodeFilter {
     // Constants for acceptNode()
-    const ushort FILTER_ACCEPT = 1;
-    const ushort FILTER_REJECT = 2;
-    const ushort FILTER_SKIP = 3;
+    static immutable ushort FILTER_ACCEPT = 1;
+    static immutable ushort FILTER_REJECT = 2;
+    static immutable ushort FILTER_SKIP = 3;
 
     // Constants for whatToShow
-    const ulong SHOW_ALL = 0xFFFFFFFF;
-    const ulong SHOW_ELEMENT = 0x1;
-    const ulong SHOW_ATTRIBUTE = 0x2; // historical
-    const ulong SHOW_TEXT = 0x4;
-    const ulong SHOW_CDATA_SECTION = 0x8; // historical
-    const ulong SHOW_ENTITY_REFERENCE = 0x10; // historical
-    const ulong SHOW_ENTITY = 0x20; // historical
-    const ulong SHOW_PROCESSING_INSTRUCTION = 0x40;
-    const ulong SHOW_COMMENT = 0x80;
-    const ulong SHOW_DOCUMENT = 0x100;
-    const ulong SHOW_DOCUMENT_TYPE = 0x200;
-    const ulong SHOW_DOCUMENT_FRAGMENT = 0x400;
-    const ulong SHOW_NOTATION = 0x800; // historical
+    static immutable uint SHOW_ALL = 0xFFFFFFFF;
+    static immutable uint SHOW_ELEMENT = 0x1;
+    static immutable uint SHOW_ATTRIBUTE = 0x2; // historical
+    static immutable uint SHOW_TEXT = 0x4;
+    static immutable uint SHOW_CDATA_SECTION = 0x8; // historical
+    static immutable uint SHOW_ENTITY_REFERENCE = 0x10; // historical
+    static immutable uint SHOW_ENTITY = 0x20; // historical
+    static immutable uint SHOW_PROCESSING_INSTRUCTION = 0x40;
+    static immutable uint SHOW_COMMENT = 0x80;
+    static immutable uint SHOW_DOCUMENT = 0x100;
+    static immutable uint SHOW_DOCUMENT_TYPE = 0x200;
+    static immutable uint SHOW_DOCUMENT_FRAGMENT = 0x400;
+    static immutable uint SHOW_NOTATION = 0x800; // historical
 
     ushort acceptNode(Node node) {
         assert(0);
